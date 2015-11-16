@@ -1,0 +1,21 @@
+requirement : Tkinter python2
+
+The source code will work on localhost. (127.0.0.1, 9999)
+
+
+To make it work over LAN, change the following line of source code.
+file :	TTT_server.py
+line :	11
+	localhost code:	self.server_socket.bind( (socket.gethostname(), self.port) )
+	LAN code:	self.server_socket.bind( ('192.168.0.118', self.port) )  #set the ip of the system where server will be started.
+
+file :	TTT_client.py
+line :	320
+	localhost code:	self.server_socket.bind( (socket.gethostname(), self.port) )
+	LAN code:	self.server_socket.bind( ('192.168.0.118', self.port) )  #set the ip of the system where server is running.
+
+
+To run it on local host.
+commands are :
+	terminal server : python TTT_server.py
+	terminal client : python TTT_client.py on two different terminal  
